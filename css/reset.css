@@ -1,0 +1,48 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, h1, h2, h4, 
+p, a, em, img, ins, strong, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tr, th, td,
+article, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: middle;
+}
+/* HTML5 display-role reset for older browsers */
+div, h1, h2, p,article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, a {
+	display: block;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}
+ul, menu, dir {
+    display: block;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input[type="button"] {
+	cursor: pointer;
+	padding: 0px;
+}

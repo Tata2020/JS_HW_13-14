@@ -4,19 +4,37 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Script-Type" content="type">
-	<title>Homework 11-12</title>
+	<title>Homework 13-14</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/mycarousel.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 	
 	<script type="text/javascript" src="js/tmpl.js"></script>
-	<script type="text/javascript" src="js/jquery.mycarousel.js" ></script>
 	<script type="text/javascript" src="js/script.js" ></script>
 </head>
 <body>
 	<div class="wrapper">
-		
+		<div class="form__wrapper">
+			<script type="text/template" id="test">
+				<h1 class="title"><%= data.title%></h1>
+				<form name="quiz" method="POST" action="#">
+					<ol>
+			            <% for (var i = 0; i < data.question.length; i++) { %>
+						<li class="list"><%= data.question[i].content%></li>
+							<ul>
+	               			<% for (var j = 0; j < data.question[i].variants.length; j++) { %>
+	                          <li class="list__item">
+	                            <input type="checkbox" id="check<%= i%><%= j%>" name="question<%= (i+1)%>" value="q<%= i%>v<%= j%>">
+	                            <label for="check<%= i%><%= j%>"><%= data.question[i].variants[j]%></label>
+		                      </li>
+	                        <% }; %>
+	                        </ul>
+	                    <% }; %>
+	                </ol>
+	                <input type="submit" value="Проверить мои результаты">
+                </form>
+			</script>
+		</div>		
  	</div>
 </body>
 </html>
