@@ -2,7 +2,6 @@ body {
 	background: #cfcfcf;
 	font-family: verdana, 'sans serif';
 }
-}
 .wrapper {
 	width: 960px;
 	margin: 0px auto;
@@ -39,10 +38,10 @@ input[type="checkbox"] {
 	margin-left: -7px;
 	vertical-align: middle;
 }
-input[type="submit"] {
+.submit, 
+.button__close {
 	display: block;
-	margin-top: 49px;
-	margin-left: 192px;
+	margin: 40px 170px;
 	text-align: center;
 	padding: 13px 40px;
 	background: rgba(158, 223, 235, 0.42);
@@ -53,7 +52,7 @@ input[type="submit"] {
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 	font-size: 120%;
 }
-input[type="submit"]:hover {
+.submit:hover {
 	background: rgba(158, 223, 235, 0.52);
 	border: 3px solid #191818;
 	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
@@ -62,14 +61,13 @@ input[type="submit"]:hover {
 	color: #322C90;
 }
 .modal {
-	position: absolute;
-	width: 870px;
-	height: 573px;
-	top: 50%;
-	left: 50%;
-	margin: -70px 0 0 -200px;
+	position: relative;
+	width: 570px;
+	height: 350px;
+	margin: 50px auto;
+	padding: 15px;
 	text-align: center;
-	background: #000;
+	background: #fff;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
@@ -81,4 +79,24 @@ input[type="submit"]:hover {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+.modal__title {
+	margin: 20px auto; 
+	font-size: 20px;
+	font-weight: bold;
+	color: #545433;
+}
+.modal__list {
+	padding: 15px 0px 0px 80px;
+}
+.modal__item {
+	font-size: 15px;
+	line-height: 30px;
+	text-align: left;
+}
+.modal__congr {
+	margin-top: 20px;
+	font-size: 15px;
+	color: #1D2D9A;
+	font-weight: bolder;
 }
