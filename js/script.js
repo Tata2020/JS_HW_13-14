@@ -44,13 +44,12 @@ testContent = JSON.parse(testStorage);            //parsing data from JSON-forma
  
  var sumRes = [ ];                       //result signature 
  var sumTest = [ ];                      //test signature
- var sumN = [ ];                         //quantity mistakses
+ var sumN = [ ];                         //quantity right answers
  var $modal;
  var $overlay;
  
  // Text in modal window
  var text1 = 'Выбраны все правильные ответы.';
- var text2 = 'Выбранo не правильныx ответов.'; 
  var text3 = 'Не выбрано ни одного правильного ответа.';
  var textModal = [ ];                        
  var flag = 0;                                    //flag for text4
@@ -92,25 +91,25 @@ function testProcessing() {
      if (answersTest[j]) {
       sumTest[i]++;
      };
-     if ((answersTest[j] & answersUser[j])) {
+     if (answersTest[j] & answersUser[j]) {
+      sumN[i]++;
+     };
+     if (answersTest[j] === answersUser[j]) {
       sumRes[i]++;
      } else {
-      sumN[i]++; 
+       
      };
    };
-  console.log('answersUser', answersUser);
-  console.log('answersTest', answersTest);
  };
-  console.log('sumRes', sumRes);
-  console.log('sumTest', sumTest);
   for (var i = 0; i < $qLength; i++) {
-    if (!sumRes[i]) {
+    if (!sumN[i]) {
       textModal[i] = text3;
-    } else if (sumRes[i] === sumTest[i]) {
+    } else if ((sumRes[i] === testContent.question[i].variants.length) &
+               (sumN[i] === sumTest[i])) {
         textModal[i] = text1;
         flag++;
         } else {
-          textModal[i] = 'Выбранo правильныx ответов - ' + sumRes[i] + '.';
+          textModal[i] = 'Выбранo правильныx ответов - ' + sumN[i] + '.';
         };
   };
 };
